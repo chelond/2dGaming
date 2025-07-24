@@ -5,6 +5,7 @@ public class Move : MonoBehaviour
 {
     private Rigidbody2D rb;
     public float speed = 5f;
+    public float jampHeight;
 
     void Start()
     {
@@ -13,14 +14,17 @@ public class Move : MonoBehaviour
     void Update()
     {
         Flip();
+        if (Input.GetKeyDown(KeyCode.Space))
+            rb.AddForce(transform.up * jampHeight, ForceMode2D.Impulse);
     }
 
     void FixedUpdate()
     {
        
-
-        float moveInput = Input.GetAxisRaw("Horizontal");
+         float moveInput = Input.GetAxisRaw("Horizontal");
         rb.linearVelocity = new Vector2(moveInput * speed, rb.linearVelocity.y);
+
+        
     }
     void Flip()
     {

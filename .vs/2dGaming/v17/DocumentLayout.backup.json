@@ -3,20 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\zxc1000-7\\2dGaming\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C29AAE9B-6365-EDD2-BC57-316138299B38}|Assembly-CSharp.csproj|c:\\users\\zxc1000-7\\2dgaming\\assets\\scripts\\movement\\newmonobehaviourscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C29AAE9B-6365-EDD2-BC57-316138299B38}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\movement\\newmonobehaviourscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C29AAE9B-6365-EDD2-BC57-316138299B38}|Assembly-CSharp.csproj|c:\\users\\zxc1000-7\\2dgaming\\assets\\scripts\\movement\\move.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C29AAE9B-6365-EDD2-BC57-316138299B38}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\movement\\move.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\zxc1000-7\\2dGaming\\Assets\\Scripts\\movement\\NewMonoBehaviourScript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\movement\\NewMonoBehaviourScript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C29AAE9B-6365-EDD2-BC57-316138299B38}|Assembly-CSharp.csproj|C:\\Users\\zxc1000-7\\2dGaming\\assets\\scripts\\movement\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C29AAE9B-6365-EDD2-BC57-316138299B38}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\movement\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C29AAE9B-6365-EDD2-BC57-316138299B38}|Assembly-CSharp.csproj|C:\\Users\\zxc1000-7\\2dGaming\\assets\\scenes\\newemptycsharpscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C29AAE9B-6365-EDD2-BC57-316138299B38}|Assembly-CSharp.csproj|solutionrelative:assets\\scenes\\newemptycsharpscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\zxc1000-7\\2dGaming\\Assets\\Scripts\\movement\\NewEmptyCSharpScript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\movement\\NewEmptyCSharpScript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\zxc1000-7\\2dGaming\\assets\\scripts\\movement\\newemptycsharpscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\scripts\\movement\\newemptycsharpscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\zxc1000-7\\2dGaming\\Assets\\Scenes\\NewEmptyCSharpScript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scenes\\NewEmptyCSharpScript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,11 +30,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "Move.cs",
+              "DocumentMoniker": "C:\\Users\\zxc1000-7\\2dGaming\\Assets\\Scripts\\movement\\Move.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\movement\\Move.cs",
+              "ToolTip": "C:\\Users\\zxc1000-7\\2dGaming\\Assets\\Scripts\\movement\\Move.cs",
+              "RelativeToolTip": "Assets\\Scripts\\movement\\Move.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-24T20:53:11.359Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "PlayerController.cs",
               "DocumentMoniker": "C:\\Users\\zxc1000-7\\2dGaming\\Assets\\Scripts\\movement\\PlayerController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\movement\\PlayerController.cs",
@@ -42,16 +59,14 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "NewMonoBehaviourScript.cs",
               "DocumentMoniker": "C:\\Users\\zxc1000-7\\2dGaming\\Assets\\Scripts\\movement\\NewMonoBehaviourScript.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\movement\\NewMonoBehaviourScript.cs",
               "ToolTip": "C:\\Users\\zxc1000-7\\2dGaming\\Assets\\Scripts\\movement\\NewMonoBehaviourScript.cs",
               "RelativeToolTip": "Assets\\Scripts\\movement\\NewMonoBehaviourScript.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-24T20:04:50.309Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-24T20:04:50.309Z"
             },
             {
               "$type": "Document",
@@ -67,7 +82,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "NewEmptyCSharpScript.cs",
               "DocumentMoniker": "C:\\Users\\zxc1000-7\\2dGaming\\Assets\\Scenes\\NewEmptyCSharpScript.cs",
               "RelativeDocumentMoniker": "Assets\\Scenes\\NewEmptyCSharpScript.cs",

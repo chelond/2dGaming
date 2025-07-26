@@ -14,6 +14,8 @@ public class TopDownPlayerController : MonoBehaviour
     public Transform attackPoint;
     public float attackRange = 1f;
     public LayerMask enemyLayer;
+    public int attackDamage = 25;
+    public int maxHealth = 100;
 
     private Rigidbody2D rb;
     private Vector2 moveInput;
@@ -21,7 +23,8 @@ public class TopDownPlayerController : MonoBehaviour
     private float lastAttackTime;
     private Animator animator;
     private Vector3 initialScale;
-    private int currentDirection = 2; // Начальное направление (down)
+    private int currentDirection = 2;
+    private int currentHealth;
 
     void Start()
     {
@@ -30,6 +33,7 @@ public class TopDownPlayerController : MonoBehaviour
         rb.freezeRotation = true;
         lastMoveDirection = Vector2.down;
         initialScale = transform.localScale;
+        currentHealth = maxHealth;
     }
 
     void Update()
@@ -165,11 +169,19 @@ public class TopDownPlayerController : MonoBehaviour
         lastAttackTime = Time.time;
 
         // Проверяем, есть ли враги в зоне атаки
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
-
-        foreach (Collider2D enemy in hitEnemies)
+        if (attackPoint != null)
         {
-            Debug.Log($"Hit {enemy.name}");
+            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
+
+            foreach (Collider2D enemy in hitEnemies)
+            {
+                WanderingEnemy2D enemyScript = enemy.GetComponent<WanderingEnemy2D>();
+                if (enemyScript != null)
+                {
+                    enemyScript.TakeDamage(attackDamage);
+                    Debug.Log($"Player attacks {enemy.name} for {attackDamage} damage!");
+                }
+            }
         }
 
         // Запускаем анимацию атаки
@@ -177,6 +189,24 @@ public class TopDownPlayerController : MonoBehaviour
         {
             animator.SetTrigger("Attack");
         }
+    }
+
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        Debug.Log($"Player takes {damage} damage! Health: {currentHealth}");
+
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        Debug.Log("Player defeated!");
+        // Здесь можно добавить логику смерти игрока
+        // Например, перезапуск уровня, показ экрана смерти и т.д.
     }
 
     void OnDrawGizmosSelected()

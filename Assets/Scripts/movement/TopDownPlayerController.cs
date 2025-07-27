@@ -13,7 +13,7 @@ public class TopDownPlayerController : MonoBehaviour
 
     [Header("Roll/Dash")]
     public float rollForce = 15f;
-    public float rollDuration = 0.3f;
+    public float rollDuration = 0.5f; // Увеличьте до длительности анимации
     public float rollCooldown = 1f;
     public bool rollInvincibility = true;
 
@@ -205,16 +205,20 @@ public class TopDownPlayerController : MonoBehaviour
         isRolling = true;
         lastRollTime = Time.time;
         lastActionTime = Time.time;
+        
+        // Автоматически определяем длительность анимации
+        if (animator != null)
+        {
+            AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+            rollDuration = stateInfo.length;
+            animator.SetTrigger("Roll");
+        }
+        
         rollTimer = rollDuration;
         currentStamina = Mathf.Max(0, currentStamina - rollStaminaCost);
 
         rollDirection = moveInput != Vector2.zero ? moveInput.normalized : lastMoveDirection.normalized;
         rb.linearVelocity = rollDirection * rollForce;
-
-        if (animator != null)
-        {
-            animator.SetTrigger("Roll");
-        }
 
         if (rollParticle != null)
         {

@@ -29,6 +29,7 @@ public class TopDownPlayerController : MonoBehaviour
 
     [Header("Effects")]
     public ParticleSystem rollParticle;
+    public ParticleSystem runParticle; // Новый эффект для бега
     public AudioClip rollSound;
     public AudioClip damageSound;
     public AudioClip deathSound;
@@ -38,6 +39,7 @@ public class TopDownPlayerController : MonoBehaviour
     private AudioSource audioSource;
     private Vector2 moveInput;
     private Vector2 lastMoveDirection;
+    private Vector2 smoothDirection; // Для плавного направления
     private Vector3 initialScale;
     private float lastRollTime;
     private float lastActionTime;
@@ -48,6 +50,7 @@ public class TopDownPlayerController : MonoBehaviour
     private float currentStamina;
     private float currentHealth;
     private bool isDead = false;
+    private SpriteRenderer spriteRenderer;
 
     void Awake()
     {
@@ -59,6 +62,8 @@ public class TopDownPlayerController : MonoBehaviour
         currentStamina = maxStamina;
         currentHealth = maxHealth;
         lastMoveDirection = Vector2.down;
+        smoothDirection = lastMoveDirection;
+        spriteRenderer = GetComponent<SpriteRenderer>(); // добавлено
     }
 
     void Update()
@@ -67,6 +72,8 @@ public class TopDownPlayerController : MonoBehaviour
 
         HandleInput();
         HandleStamina();
+        // Плавное направление для Blend Tree
+        smoothDirection = Vector2.Lerp(smoothDirection, lastMoveDirection, Time.deltaTime * 10f);
         HandleAnimations();
 
         // Handle roll
@@ -143,17 +150,50 @@ public class TopDownPlayerController : MonoBehaviour
     {
         if (animator == null) return;
 
-        float directionX = lastMoveDirection.x;
-        float directionY = lastMoveDirection.y;
-        animator.SetFloat("DirectionX", directionX);
-        animator.SetFloat("DirectionY", directionY);
+        Vector2 animDirection;
+        // Если персонаж двигается — направление по движению, иначе по мыши
+        if (moveInput.magnitude > inputDeadzone)
+        {
+            animDirection = moveInput;
+        }
+        else
+        {
+            if (Camera.main != null)
+            {
+                Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                Vector2 toMouse = mouseWorld - transform.position;
+                animDirection = toMouse.normalized;
+            }
+            else
+            {
+                animDirection = lastMoveDirection;
+            }
+        }
+        // Плавное направление для Blend Tree
+        smoothDirection = Vector2.Lerp(smoothDirection, animDirection, Time.deltaTime * 10f);
+
+        animator.SetFloat("DirectionX", smoothDirection.x);
+        animator.SetFloat("DirectionY", smoothDirection.y);
         animator.SetFloat("Speed", moveInput.magnitude);
         animator.SetBool("IsRunning", isRunning);
         animator.SetBool("IsRolling", isRolling);
         animator.SetBool("IsDead", isDead);
 
-        FlipCharacter();
+        // Визуальный эффект бега
+        if (isRunning && runParticle != null && !runParticle.isPlaying)
+            runParticle.Play();
+        else if (!isRunning && runParticle != null && runParticle.isPlaying)
+            runParticle.Stop();
+
+        // flipX для левого направления (если side-анимация только вправо)
+        if (spriteRenderer != null && Mathf.Abs(smoothDirection.x) > Mathf.Abs(smoothDirection.y))
+        {
+            spriteRenderer.flipX = smoothDirection.x < 0;
+        }
     }
+
+    // Поворот спрайта к курсору мыши через анимации
+    void FlipToCursor() { /* больше не нужен, логика перенесена в HandleAnimations */ }
 
     bool CanRoll()
     {
@@ -198,22 +238,6 @@ public class TopDownPlayerController : MonoBehaviour
         }
     }
 
-    void FlipCharacter()
-    {
-        if (Mathf.Abs(moveInput.x) > Mathf.Abs(moveInput.y) && moveInput.x != 0)
-        {
-            transform.localScale = new Vector3(
-                moveInput.x > 0 ? Mathf.Abs(initialScale.x) : -Mathf.Abs(initialScale.x),
-                initialScale.y,
-                initialScale.z
-            );
-        }
-        else if (Mathf.Abs(moveInput.y) > Mathf.Abs(moveInput.x))
-        {
-            transform.localScale = new Vector3(Mathf.Abs(initialScale.x), initialScale.y, initialScale.z);
-        }
-    }
-
     public void TakeDamage(float damage)
     {
         if (isDead || (isRolling && rollInvincibility)) return;
@@ -248,8 +272,6 @@ public class TopDownPlayerController : MonoBehaviour
         {
             audioSource.PlayOneShot(deathSound);
         }
-
-        // Дополнительная логика (например, деактивация коллайдера)
     }
 
     public float GetStaminaPercentage()

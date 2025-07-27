@@ -5,196 +5,226 @@ public class TopDownPlayerController : MonoBehaviour
 {
     [Header("Movement")]
     public float moveSpeed = 5f;
+    public float runSpeed = 8f;
     public float acceleration = 20f;
     public float deceleration = 30f;
     public float velocityPower = 0.9f;
+    [Range(0f, 0.5f)] public float inputDeadzone = 0.1f;
 
-    [Header("Combat")]
-    public float attackCooldown = 0.5f;
-    public Transform attackPoint;
-    public float attackRange = 1f;
-    public LayerMask enemyLayer;
-    public int attackDamage = 25;
-    public int maxHealth = 100;
+    [Header("Roll/Dash")]
+    public float rollForce = 15f;
+    public float rollDuration = 0.3f;
+    public float rollCooldown = 1f;
+    public bool rollInvincibility = true;
+
+    [Header("Stamina")]
+    public float maxStamina = 100f;
+    public float staminaRegenRate = 20f;
+    public float staminaRegenDelay = 1f;
+    public float runStaminaCost = 10f;
+    public float rollStaminaCost = 25f;
+
+    [Header("Health")]
+    public float maxHealth = 100f;
+
+    [Header("Effects")]
+    public ParticleSystem rollParticle;
+    public AudioClip rollSound;
+    public AudioClip damageSound;
+    public AudioClip deathSound;
 
     private Rigidbody2D rb;
+    private Animator animator;
+    private AudioSource audioSource;
     private Vector2 moveInput;
     private Vector2 lastMoveDirection;
-    private float lastAttackTime;
-    private Animator animator;
     private Vector3 initialScale;
-    private int currentDirection = 2;
-    private int currentHealth;
+    private float lastRollTime;
+    private float lastActionTime;
+    private bool isRolling = false;
+    private bool isRunning = false;
+    private float rollTimer = 0f;
+    private Vector2 rollDirection;
+    private float currentStamina;
+    private float currentHealth;
+    private bool isDead = false;
 
-    void Start()
+    void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
         rb.freezeRotation = true;
-        lastMoveDirection = Vector2.down;
         initialScale = transform.localScale;
+        currentStamina = maxStamina;
         currentHealth = maxHealth;
+        lastMoveDirection = Vector2.down;
     }
 
     void Update()
     {
-        // Получаем ввод для движения
-        moveInput.x = Input.GetAxisRaw("Horizontal");
-        moveInput.y = Input.GetAxisRaw("Vertical");
-        moveInput = moveInput.normalized;
+        if (isDead) return;
 
-        // Сохраняем последнее направление движения
-        if (moveInput != Vector2.zero)
+        HandleInput();
+        HandleStamina();
+        HandleAnimations();
+
+        // Handle roll
+        if (Input.GetKeyDown(KeyCode.Space) && CanRoll())
         {
-            lastMoveDirection = moveInput;
+            StartRoll();
         }
 
-        // Определяем направление для анимации
-        int newDirection = GetDirectionIndex(lastMoveDirection);
-
-        // Передаем данные в аниматор
-        if (animator != null)
+        // Update roll timer
+        if (isRolling)
         {
-            animator.SetFloat("Speed", moveInput.magnitude);
-            
-            // Принудительно обновляем направление
-            if (newDirection != currentDirection)
+            rollTimer -= Time.deltaTime;
+            if (rollTimer <= 0)
             {
-                currentDirection = newDirection;
-                animator.SetInteger("Direction", currentDirection);
-                
-                // Принудительно переключаем анимацию
-                if (moveInput.magnitude > 0.1f)
-                {
-                    switch (currentDirection)
-                    {
-                        case 0: // side
-                            animator.Play("run_side");
-                            break;
-                        case 1: // up
-                            animator.Play("run_up");
-                            break;
-                        case 2: // down
-                            animator.Play("run_down");
-                            break;
-                    }
-                }
-                else
-                {
-                    switch (currentDirection)
-                    {
-                        case 0: // side
-                            animator.Play("idle_side");
-                            break;
-                        case 1: // up
-                            animator.Play("idle_up");
-                            break;
-                        case 2: // down
-                            animator.Play("idle_down");
-                            break;
-                    }
-                }
+                EndRoll();
             }
-        }
-
-        // Поворачиваем персонажа только при движении влево/вправо
-        FlipCharacter();
-
-        // Атака
-        if (Input.GetMouseButtonDown(0) && Time.time >= lastAttackTime + attackCooldown)
-        {
-            Attack();
         }
     }
 
     void FixedUpdate()
     {
-        // Плавное движение с ускорением и замедлением
-        Vector2 targetVelocity = moveInput * moveSpeed;
+        if (isRolling || isDead) return;
+
+        float currentSpeed = isRunning ? runSpeed : moveSpeed;
+        Vector2 targetVelocity = moveInput * currentSpeed;
         Vector2 velocityDifference = targetVelocity - rb.linearVelocity;
-        float accelerationRate = (moveInput.magnitude > 0.01f) ? acceleration : deceleration;
-        Vector2 movement = Mathf.Pow(Mathf.Abs(velocityDifference.magnitude) * accelerationRate, velocityPower) * velocityDifference.normalized;
+        float accelerationRate = (moveInput.magnitude > inputDeadzone) ? acceleration : deceleration;
+        Vector2 movement = Vector2.ClampMagnitude(velocityDifference * accelerationRate, currentSpeed) * Time.fixedDeltaTime;
 
-        rb.AddForce(movement);
+        rb.linearVelocity = Vector2.Lerp(rb.linearVelocity, targetVelocity, accelerationRate * Time.fixedDeltaTime);
 
-        // Ограничение максимальной скорости
-        if (rb.linearVelocity.magnitude > moveSpeed)
+        if (rb.linearVelocity.magnitude > currentSpeed)
         {
-            rb.linearVelocity = rb.linearVelocity.normalized * moveSpeed;
+            rb.linearVelocity = rb.linearVelocity.normalized * currentSpeed;
         }
     }
 
-    // Определяем индекс направления для анимации
-    int GetDirectionIndex(Vector2 direction)
+    void HandleInput()
     {
-        // Определяем основное направление по наибольшей компоненте
-        if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
+        moveInput.x = Input.GetAxisRaw("Horizontal");
+        moveInput.y = Input.GetAxisRaw("Vertical");
+
+        if (moveInput.magnitude < inputDeadzone)
         {
-            return 0; // side (влево/вправо)
-        }
-        else if (direction.y > 0)
-        {
-            return 1; // up
+            moveInput = Vector2.zero;
         }
         else
         {
-            return 2; // down
+            moveInput = moveInput.normalized;
+        }
+
+        isRunning = Input.GetKey(KeyCode.LeftShift) && moveInput.magnitude > inputDeadzone && currentStamina > 0;
+
+        if (moveInput != Vector2.zero)
+        {
+            lastMoveDirection = moveInput;
         }
     }
 
-    // Поворачиваем персонажа только при движении влево/вправо
+    void HandleStamina()
+    {
+        if (isRunning)
+        {
+            currentStamina = Mathf.Max(0, currentStamina - Time.deltaTime * runStaminaCost);
+            lastActionTime = Time.time;
+        }
+        else if (Time.time >= lastActionTime + staminaRegenDelay)
+        {
+            currentStamina = Mathf.Min(maxStamina, currentStamina + Time.deltaTime * staminaRegenRate);
+        }
+    }
+
+    void HandleAnimations()
+    {
+        if (animator == null) return;
+
+        float directionX = lastMoveDirection.x;
+        float directionY = lastMoveDirection.y;
+        animator.SetFloat("DirectionX", directionX);
+        animator.SetFloat("DirectionY", directionY);
+        animator.SetFloat("Speed", moveInput.magnitude);
+        animator.SetBool("IsRunning", isRunning);
+        animator.SetBool("IsRolling", isRolling);
+        animator.SetBool("IsDead", isDead);
+
+        FlipCharacter();
+    }
+
+    bool CanRoll()
+    {
+        return !isRolling && !isDead && Time.time >= lastRollTime + rollCooldown && currentStamina >= rollStaminaCost;
+    }
+
+    void StartRoll()
+    {
+        isRolling = true;
+        lastRollTime = Time.time;
+        lastActionTime = Time.time;
+        rollTimer = rollDuration;
+        currentStamina = Mathf.Max(0, currentStamina - rollStaminaCost);
+
+        rollDirection = moveInput != Vector2.zero ? moveInput.normalized : lastMoveDirection.normalized;
+        rb.linearVelocity = rollDirection * rollForce;
+
+        if (animator != null)
+        {
+            animator.SetTrigger("Roll");
+        }
+
+        if (rollParticle != null)
+        {
+            rollParticle.Play();
+        }
+        if (audioSource != null && rollSound != null)
+        {
+            audioSource.PlayOneShot(rollSound);
+        }
+    }
+
+    void EndRoll()
+    {
+        isRolling = false;
+        rollTimer = 0f;
+        rb.linearVelocity = Vector2.zero;
+
+        if (rollParticle != null)
+        {
+            rollParticle.Stop();
+        }
+    }
+
     void FlipCharacter()
     {
-        // Поворачиваем только если движение преимущественно горизонтальное
         if (Mathf.Abs(moveInput.x) > Mathf.Abs(moveInput.y) && moveInput.x != 0)
         {
-            if (moveInput.x > 0)
-            {
-                transform.localScale = new Vector3(Mathf.Abs(initialScale.x), initialScale.y, initialScale.z);
-            }
-            else
-            {
-                transform.localScale = new Vector3(-Mathf.Abs(initialScale.x), initialScale.y, initialScale.z);
-            }
+            transform.localScale = new Vector3(
+                moveInput.x > 0 ? Mathf.Abs(initialScale.x) : -Mathf.Abs(initialScale.x),
+                initialScale.y,
+                initialScale.z
+            );
         }
-        // При движении вверх/вниз возвращаем к нормальному scale
         else if (Mathf.Abs(moveInput.y) > Mathf.Abs(moveInput.x))
         {
             transform.localScale = new Vector3(Mathf.Abs(initialScale.x), initialScale.y, initialScale.z);
         }
     }
 
-    void Attack()
+    public void TakeDamage(float damage)
     {
-        lastAttackTime = Time.time;
+        if (isDead || (isRolling && rollInvincibility)) return;
 
-        // Проверяем, есть ли враги в зоне атаки
-        if (attackPoint != null)
+        currentHealth = Mathf.Max(0, currentHealth - damage);
+        Debug.Log($"Player took {damage} damage. Current health: {currentHealth}");
+
+        if (audioSource != null && damageSound != null)
         {
-            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
-
-            foreach (Collider2D enemy in hitEnemies)
-            {
-                WanderingEnemy2D enemyScript = enemy.GetComponent<WanderingEnemy2D>();
-                if (enemyScript != null)
-                {
-                    enemyScript.TakeDamage(attackDamage);
-                    Debug.Log($"Player attacks {enemy.name} for {attackDamage} damage!");
-                }
-            }
+            audioSource.PlayOneShot(damageSound);
         }
-
-        // Запускаем анимацию атаки
-        if (animator != null)
-        {
-            animator.SetTrigger("Attack");
-        }
-    }
-
-    public void TakeDamage(int damage)
-    {
-        currentHealth -= damage;
-        Debug.Log($"Player takes {damage} damage! Health: {currentHealth}");
 
         if (currentHealth <= 0)
         {
@@ -202,19 +232,48 @@ public class TopDownPlayerController : MonoBehaviour
         }
     }
 
-    void Die()
+    private void Die()
     {
-        Debug.Log("Player defeated!");
-        // Здесь можно добавить логику смерти игрока
-        // Например, перезапуск уровня, показ экрана смерти и т.д.
+        isDead = true;
+        rb.linearVelocity = Vector2.zero;
+        Debug.Log("Player died!");
+
+        if (animator != null)
+        {
+            animator.SetTrigger("Die");
+            animator.SetBool("IsDead", true);
+        }
+
+        if (audioSource != null && deathSound != null)
+        {
+            audioSource.PlayOneShot(deathSound);
+        }
+
+        // Дополнительная логика (например, деактивация коллайдера)
     }
 
-    void OnDrawGizmosSelected()
+    public float GetStaminaPercentage()
     {
-        if (attackPoint != null)
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(attackPoint.position, attackRange);
-        }
+        return currentStamina / maxStamina;
+    }
+
+    public float GetHealthPercentage()
+    {
+        return currentHealth / maxHealth;
+    }
+
+    public bool IsRolling()
+    {
+        return isRolling;
+    }
+
+    public bool IsRunning()
+    {
+        return isRunning;
+    }
+
+    public bool IsDead()
+    {
+        return isDead;
     }
 }

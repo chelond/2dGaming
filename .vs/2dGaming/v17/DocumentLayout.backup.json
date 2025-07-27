@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\zxc1000-7\\2dGaming\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C29AAE9B-6365-EDD2-BC57-316138299B38}|Assembly-CSharp.csproj|c:\\users\\zxc1000-7\\2dgaming\\assets\\scripts\\gins\\gun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C29AAE9B-6365-EDD2-BC57-316138299B38}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gins\\gun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C29AAE9B-6365-EDD2-BC57-316138299B38}|Assembly-CSharp.csproj|c:\\users\\zxc1000-7\\2dgaming\\assets\\scripts\\guns\\gun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C29AAE9B-6365-EDD2-BC57-316138299B38}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\guns\\gun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C29AAE9B-6365-EDD2-BC57-316138299B38}|Assembly-CSharp.csproj|c:\\users\\zxc1000-7\\2dgaming\\assets\\scripts\\gins\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C29AAE9B-6365-EDD2-BC57-316138299B38}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gins\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\zxc1000-7\\2dGaming\\Assets\\Scripts\\gins\\gun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\gins\\gun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\zxc1000-7\\2dGaming\\Assets\\Scripts\\gun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -25,6 +25,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\zxc1000-7\\2dGaming\\Assets\\Scripts\\script enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\script enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\zxc1000-7\\2dGaming\\Assets\\Scripts\\gins\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\gins\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -40,27 +44,37 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "gun.cs",
-              "DocumentMoniker": "C:\\Users\\zxc1000-7\\2dGaming\\Assets\\Scripts\\gins\\gun.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\gins\\gun.cs",
-              "ToolTip": "C:\\Users\\zxc1000-7\\2dGaming\\Assets\\Scripts\\gins\\gun.cs*",
-              "RelativeToolTip": "Assets\\Scripts\\gins\\gun.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\zxc1000-7\\2dGaming\\Assets\\Scripts\\guns\\gun.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\guns\\gun.cs",
+              "ToolTip": "C:\\Users\\zxc1000-7\\2dGaming\\Assets\\Scripts\\guns\\gun.cs",
+              "RelativeToolTip": "Assets\\Scripts\\guns\\gun.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAACIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-26T23:52:13.84Z",
+              "WhenOpened": "2025-07-27T19:59:27.761Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "gun.cs",
+              "DocumentMoniker": "C:\\Users\\zxc1000-7\\2dGaming\\Assets\\Scripts\\gins\\gun.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\gins\\gun.cs",
+              "ToolTip": "C:\\Users\\zxc1000-7\\2dGaming\\Assets\\Scripts\\gins\\gun.cs",
+              "RelativeToolTip": "Assets\\Scripts\\gins\\gun.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-26T23:52:13.84Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "bullet.cs",
               "DocumentMoniker": "C:\\Users\\zxc1000-7\\2dGaming\\Assets\\Scripts\\gins\\bullet.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\gins\\bullet.cs",
-              "ToolTip": "C:\\Users\\zxc1000-7\\2dGaming\\Assets\\Scripts\\gins\\bullet.cs*",
-              "RelativeToolTip": "Assets\\Scripts\\gins\\bullet.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\zxc1000-7\\2dGaming\\Assets\\Scripts\\gins\\bullet.cs",
+              "RelativeToolTip": "Assets\\Scripts\\gins\\bullet.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-26T23:46:13.299Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-26T23:46:13.299Z"
             },
             {
               "$type": "Document",
@@ -71,7 +85,8 @@
               "ToolTip": "C:\\Users\\zxc1000-7\\2dGaming\\Assets\\Scripts\\gun.cs",
               "RelativeToolTip": "Assets\\Scripts\\gun.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-26T15:04:02.612Z"
+              "WhenOpened": "2025-07-26T15:04:02.612Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -83,7 +98,8 @@
               "RelativeToolTip": "Assets\\Scripts\\script enemy.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-26T13:36:04.141Z"
+              "WhenOpened": "2025-07-26T13:36:04.141Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -95,7 +111,8 @@
               "RelativeToolTip": "Assets\\Scenes\\beta.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAQwAMAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-26T13:19:04.623Z"
+              "WhenOpened": "2025-07-26T13:19:04.623Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -106,7 +123,8 @@
               "ToolTip": "C:\\Users\\zxc1000-7\\2dGaming\\Assets\\Scenes\\AggressiveEnemy.cs",
               "RelativeToolTip": "Assets\\Scenes\\AggressiveEnemy.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-26T12:07:03.845Z"
+              "WhenOpened": "2025-07-26T12:07:03.845Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -160,7 +160,9 @@ public class TopDownPlayerController : MonoBehaviour
         {
             if (Camera.main != null)
             {
-                Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                Vector3 mouseScreen = Input.mousePosition;
+                mouseScreen.z = Mathf.Abs(Camera.main.transform.position.z - transform.position.z);
+                Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(mouseScreen);
                 Vector2 toMouse = mouseWorld - transform.position;
                 animDirection = toMouse.normalized;
             }

@@ -179,7 +179,7 @@ public class TopDownPlayerController : MonoBehaviour
         animator.SetFloat("Speed", moveInput.magnitude);
         animator.SetBool("IsRunning", isRunning);
         animator.SetBool("IsRolling", isRolling);
-        animator.SetBool("IsDead", isDead);
+       // animator.SetBool("IsDead", isDead);
 
         // Визуальный эффект бега
         if (isRunning && runParticle != null && !runParticle.isPlaying)

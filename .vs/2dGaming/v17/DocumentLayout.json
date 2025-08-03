@@ -3,24 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\zxc1000-7\\2dGaming\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C29AAE9B-6365-EDD2-BC57-316138299B38}|Assembly-CSharp.csproj|c:\\users\\zxc1000-7\\2dgaming\\assets\\scripts\\dota.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C29AAE9B-6365-EDD2-BC57-316138299B38}|Assembly-CSharp.csproj|c:\\users\\zxc1000-7\\2dgaming\\assets\\scripts\\guns\\gun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C29AAE9B-6365-EDD2-BC57-316138299B38}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\guns\\gun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C29AAE9B-6365-EDD2-BC57-316138299B38}|Assembly-CSharp.csproj|C:\\Users\\zxc1000-7\\2dGaming\\assets\\scripts\\movement\\topdownplayercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C29AAE9B-6365-EDD2-BC57-316138299B38}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\movement\\topdownplayercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C29AAE9B-6365-EDD2-BC57-316138299B38}|Assembly-CSharp.csproj|C:\\Users\\zxc1000-7\\2dGaming\\assets\\scripts\\hp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C29AAE9B-6365-EDD2-BC57-316138299B38}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\hp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C29AAE9B-6365-EDD2-BC57-316138299B38}|Assembly-CSharp.csproj|C:\\Users\\zxc1000-7\\2dGaming\\assets\\scripts\\vrag5.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C29AAE9B-6365-EDD2-BC57-316138299B38}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\vrag5.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C29AAE9B-6365-EDD2-BC57-316138299B38}|Assembly-CSharp.csproj|C:\\Users\\zxc1000-7\\2dGaming\\assets\\scripts\\vrag4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C29AAE9B-6365-EDD2-BC57-316138299B38}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\vrag4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C29AAE9B-6365-EDD2-BC57-316138299B38}|Assembly-CSharp.csproj|C:\\Users\\zxc1000-7\\2dGaming\\assets\\scripts\\dota.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C29AAE9B-6365-EDD2-BC57-316138299B38}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\dota.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C29AAE9B-6365-EDD2-BC57-316138299B38}|Assembly-CSharp.csproj|c:\\users\\zxc1000-7\\2dgaming\\assets\\scripts\\vrag2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C29AAE9B-6365-EDD2-BC57-316138299B38}|Assembly-CSharp.csproj|C:\\Users\\zxc1000-7\\2dGaming\\assets\\scripts\\vrag2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C29AAE9B-6365-EDD2-BC57-316138299B38}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\vrag2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C29AAE9B-6365-EDD2-BC57-316138299B38}|Assembly-CSharp.csproj|C:\\Users\\zxc1000-7\\2dGaming\\assets\\scripts\\vrag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C29AAE9B-6365-EDD2-BC57-316138299B38}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\vrag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\zxc1000-7\\2dGaming\\Assets\\Scripts\\guns\\New Folder\\gun2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\guns\\New Folder\\gun2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C29AAE9B-6365-EDD2-BC57-316138299B38}|Assembly-CSharp.csproj|C:\\Users\\zxc1000-7\\2dGaming\\assets\\scripts\\guns\\gun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C29AAE9B-6365-EDD2-BC57-316138299B38}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\guns\\gun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\zxc1000-7\\2dGaming\\Assets\\Scripts\\gins\\gun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -45,6 +57,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\zxc1000-7\\2dGaming\\Assets\\Scripts\\gins\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\gins\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\zxc1000-7\\2dGaming\\assets\\scripts\\vrag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\scripts\\vrag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,24 +70,71 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": "TopDownPlayerController.cs",
+              "DocumentMoniker": "C:\\Users\\zxc1000-7\\2dGaming\\Assets\\Scripts\\movement\\TopDownPlayerController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\movement\\TopDownPlayerController.cs",
+              "ToolTip": "C:\\Users\\zxc1000-7\\2dGaming\\Assets\\Scripts\\movement\\TopDownPlayerController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\movement\\TopDownPlayerController.cs",
+              "ViewState": "AgIAAJYAAAAAAAAAAAAmwLUAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-03T13:07:59.534Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "hp.cs",
+              "DocumentMoniker": "C:\\Users\\zxc1000-7\\2dGaming\\Assets\\Scripts\\hp.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\hp.cs",
+              "ToolTip": "C:\\Users\\zxc1000-7\\2dGaming\\Assets\\Scripts\\hp.cs",
+              "RelativeToolTip": "Assets\\Scripts\\hp.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwBsAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-31T22:16:11.256Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "vrag5.cs",
+              "DocumentMoniker": "C:\\Users\\zxc1000-7\\2dGaming\\Assets\\Scripts\\vrag5.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\vrag5.cs",
+              "ToolTip": "C:\\Users\\zxc1000-7\\2dGaming\\Assets\\Scripts\\vrag5.cs",
+              "RelativeToolTip": "Assets\\Scripts\\vrag5.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEIAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-31T22:15:21.494Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "vrag4.cs",
+              "DocumentMoniker": "C:\\Users\\zxc1000-7\\2dGaming\\Assets\\Scripts\\vrag4.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\vrag4.cs",
+              "ToolTip": "C:\\Users\\zxc1000-7\\2dGaming\\Assets\\Scripts\\vrag4.cs",
+              "RelativeToolTip": "Assets\\Scripts\\vrag4.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAIAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-31T22:00:55.136Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "dota.cs",
               "DocumentMoniker": "C:\\Users\\zxc1000-7\\2dGaming\\Assets\\Scripts\\dota.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\dota.cs",
               "ToolTip": "C:\\Users\\zxc1000-7\\2dGaming\\Assets\\Scripts\\dota.cs",
               "RelativeToolTip": "Assets\\Scripts\\dota.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAA5wDoAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAAgwDoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-30T21:16:34.713Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-30T21:16:34.713Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "vrag2.cs",
               "DocumentMoniker": "C:\\Users\\zxc1000-7\\2dGaming\\Assets\\Scripts\\vrag2.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\vrag2.cs",
@@ -79,12 +142,11 @@
               "RelativeToolTip": "Assets\\Scripts\\vrag2.cs",
               "ViewState": "AgIAAK8AAAAAAAAAAAAqwNYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-30T21:08:01.252Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-30T21:08:01.252Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 14,
               "Title": "vrag.cs",
               "DocumentMoniker": "C:\\Users\\zxc1000-7\\2dGaming\\Assets\\Scripts\\vrag.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\vrag.cs",
@@ -96,7 +158,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "gun2.cs",
               "DocumentMoniker": "C:\\Users\\zxc1000-7\\2dGaming\\Assets\\Scripts\\guns\\New Folder\\gun2.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\guns\\New Folder\\gun2.cs",
@@ -107,19 +169,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "gun.cs",
               "DocumentMoniker": "C:\\Users\\zxc1000-7\\2dGaming\\Assets\\Scripts\\guns\\gun.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\guns\\gun.cs",
               "ToolTip": "C:\\Users\\zxc1000-7\\2dGaming\\Assets\\Scripts\\guns\\gun.cs",
               "RelativeToolTip": "Assets\\Scripts\\guns\\gun.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAACIAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-27T19:59:27.761Z"
+              "WhenOpened": "2025-07-27T19:59:27.761Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "gun.cs",
               "DocumentMoniker": "C:\\Users\\zxc1000-7\\2dGaming\\Assets\\Scripts\\gins\\gun.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\gins\\gun.cs",
@@ -130,7 +193,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "bullet.cs",
               "DocumentMoniker": "C:\\Users\\zxc1000-7\\2dGaming\\Assets\\Scripts\\gins\\bullet.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\gins\\bullet.cs",
@@ -142,7 +205,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "gun.cs",
               "DocumentMoniker": "C:\\Users\\zxc1000-7\\2dGaming\\Assets\\Scripts\\gun.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\gun.cs",
@@ -153,7 +216,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "script enemy.cs",
               "DocumentMoniker": "C:\\Users\\zxc1000-7\\2dGaming\\Assets\\Scripts\\script enemy.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\script enemy.cs",
@@ -165,7 +228,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "beta.cs",
               "DocumentMoniker": "C:\\Users\\zxc1000-7\\2dGaming\\Assets\\Scenes\\beta.cs",
               "RelativeDocumentMoniker": "Assets\\Scenes\\beta.cs",
@@ -177,7 +240,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "AggressiveEnemy.cs",
               "DocumentMoniker": "C:\\Users\\zxc1000-7\\2dGaming\\Assets\\Scenes\\AggressiveEnemy.cs",
               "RelativeDocumentMoniker": "Assets\\Scenes\\AggressiveEnemy.cs",

@@ -21,9 +21,6 @@ public class gun : MonoBehaviour
             {
                 Instantiate(bullet, BulletTransform.position, transform.rotation);
                 TimeFire = StartTimeFire;
-
-
-
             }
             else
             {
